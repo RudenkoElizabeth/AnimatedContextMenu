@@ -8,10 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+}
+
+private extension ViewController {
+    @IBAction func showContextMenuAction() {
+        print("TO DO")
+    }
 }

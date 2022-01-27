@@ -13,6 +13,13 @@
 		2107D70126B1896300B1312C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2107D6FF26B1896300B1312C /* Main.storyboard */; };
 		2107D70326B1896600B1312C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2107D70226B1896600B1312C /* Assets.xcassets */; };
 		2107D70626B1896600B1312C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2107D70426B1896600B1312C /* LaunchScreen.storyboard */; };
+		21B5CD2B27A2C59C0059F767 /* ContextMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2027A2C59B0059F767 /* ContextMenuPresenter.swift */; };
+		21B5CD2C27A2C59C0059F767 /* ContextMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2227A2C59B0059F767 /* ContextMenuViewController.swift */; };
+		21B5CD2D27A2C59C0059F767 /* ContextMenuConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2427A2C59B0059F767 /* ContextMenuConfigurator.swift */; };
+		21B5CD2E27A2C59C0059F767 /* ContextMenuProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2627A2C59B0059F767 /* ContextMenuProtocols.swift */; };
+		21B5CD2F27A2C59C0059F767 /* ContextMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2827A2C59B0059F767 /* ContextMenuInteractor.swift */; };
+		21B5CD3027A2C59C0059F767 /* ContextMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2A27A2C59B0059F767 /* ContextMenuRouter.swift */; };
+		21B5CD3227A2C5DC0059F767 /* ContextMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B5CD3127A2C5DC0059F767 /* ContextMenu.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		2107D70226B1896600B1312C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2107D70526B1896600B1312C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2107D70726B1896600B1312C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21B5CD2027A2C59B0059F767 /* ContextMenuPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuPresenter.swift; sourceTree = "<group>"; };
+		21B5CD2227A2C59B0059F767 /* ContextMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuViewController.swift; sourceTree = "<group>"; };
+		21B5CD2427A2C59B0059F767 /* ContextMenuConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuConfigurator.swift; sourceTree = "<group>"; };
+		21B5CD2627A2C59B0059F767 /* ContextMenuProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuProtocols.swift; sourceTree = "<group>"; };
+		21B5CD2827A2C59B0059F767 /* ContextMenuInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuInteractor.swift; sourceTree = "<group>"; };
+		21B5CD2A27A2C59B0059F767 /* ContextMenuRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuRouter.swift; sourceTree = "<group>"; };
+		21B5CD3127A2C5DC0059F767 /* ContextMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContextMenu.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,94 @@
 		2107D6F826B1896300B1312C /* AnimatedContextMenu */ = {
 			isa = PBXGroup;
 			children = (
-				2107D6F926B1896300B1312C /* AppDelegate.swift */,
-				2107D6FB26B1896300B1312C /* SceneDelegate.swift */,
-				2107D6FD26B1896300B1312C /* ViewController.swift */,
-				2107D6FF26B1896300B1312C /* Main.storyboard */,
-				2107D70226B1896600B1312C /* Assets.xcassets */,
-				2107D70426B1896600B1312C /* LaunchScreen.storyboard */,
-				2107D70726B1896600B1312C /* Info.plist */,
+				21B5CD3327A2C6750059F767 /* src */,
+				21B5CD3427A2C6A30059F767 /* app */,
 			);
 			path = AnimatedContextMenu;
+			sourceTree = "<group>";
+		};
+		21B5CD1E27A2C59B0059F767 /* ContextMenu */ = {
+			isa = PBXGroup;
+			children = (
+				21B5CD3127A2C5DC0059F767 /* ContextMenu.storyboard */,
+				21B5CD2127A2C59B0059F767 /* View */,
+				21B5CD1F27A2C59B0059F767 /* Presenter */,
+				21B5CD2727A2C59B0059F767 /* Interactor */,
+				21B5CD2927A2C59B0059F767 /* Router */,
+				21B5CD2327A2C59B0059F767 /* Configurator */,
+				21B5CD2527A2C59B0059F767 /* Protocols */,
+			);
+			path = ContextMenu;
+			sourceTree = "<group>";
+		};
+		21B5CD1F27A2C59B0059F767 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				21B5CD2027A2C59B0059F767 /* ContextMenuPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		21B5CD2127A2C59B0059F767 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21B5CD2227A2C59B0059F767 /* ContextMenuViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21B5CD2327A2C59B0059F767 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				21B5CD2427A2C59B0059F767 /* ContextMenuConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		21B5CD2527A2C59B0059F767 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				21B5CD2627A2C59B0059F767 /* ContextMenuProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		21B5CD2727A2C59B0059F767 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				21B5CD2827A2C59B0059F767 /* ContextMenuInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		21B5CD2927A2C59B0059F767 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				21B5CD2A27A2C59B0059F767 /* ContextMenuRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		21B5CD3327A2C6750059F767 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				2107D6FF26B1896300B1312C /* Main.storyboard */,
+				2107D6FD26B1896300B1312C /* ViewController.swift */,
+				21B5CD1E27A2C59B0059F767 /* ContextMenu */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		21B5CD3427A2C6A30059F767 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				2107D70726B1896600B1312C /* Info.plist */,
+				2107D6FB26B1896300B1312C /* SceneDelegate.swift */,
+				2107D6F926B1896300B1312C /* AppDelegate.swift */,
+				2107D70426B1896600B1312C /* LaunchScreen.storyboard */,
+				2107D70226B1896600B1312C /* Assets.xcassets */,
+			);
+			path = app;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +220,7 @@
 				2107D70626B1896600B1312C /* LaunchScreen.storyboard in Resources */,
 				2107D70326B1896600B1312C /* Assets.xcassets in Resources */,
 				2107D70126B1896300B1312C /* Main.storyboard in Resources */,
+				21B5CD3227A2C5DC0059F767 /* ContextMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +231,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B5CD2C27A2C59C0059F767 /* ContextMenuViewController.swift in Sources */,
+				21B5CD2D27A2C59C0059F767 /* ContextMenuConfigurator.swift in Sources */,
 				2107D6FE26B1896300B1312C /* ViewController.swift in Sources */,
+				21B5CD2F27A2C59C0059F767 /* ContextMenuInteractor.swift in Sources */,
 				2107D6FA26B1896300B1312C /* AppDelegate.swift in Sources */,
 				2107D6FC26B1896300B1312C /* SceneDelegate.swift in Sources */,
+				21B5CD2B27A2C59C0059F767 /* ContextMenuPresenter.swift in Sources */,
+				21B5CD3027A2C59C0059F767 /* ContextMenuRouter.swift in Sources */,
+				21B5CD2E27A2C59C0059F767 /* ContextMenuProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +388,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8WC7W7LL3;
-				INFOPLIST_FILE = AnimatedContextMenu/Info.plist;
+				INFOPLIST_FILE = AnimatedContextMenu/app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +407,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8WC7W7LL3;
-				INFOPLIST_FILE = AnimatedContextMenu/Info.plist;
+				INFOPLIST_FILE = AnimatedContextMenu/app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
