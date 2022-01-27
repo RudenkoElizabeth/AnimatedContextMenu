@@ -17,6 +17,9 @@ class ViewController: UIViewController {
 
 private extension ViewController {
     @IBAction func showContextMenuAction() {
-        print("TO DO")
+        let identifier = "ContextMenu"
+        let viewController = UIViewController.instantiateFromStoryboard(identifier)
+        ContextMenuModuleConfigurator().configureModuleForViewInput(viewInput: viewController)
+        present(viewController, animated: false)
     }
 }
