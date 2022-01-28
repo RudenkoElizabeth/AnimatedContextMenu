@@ -77,8 +77,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomConstraint" destination="CLg-ob-IO7" id="5Ky-Yx-SQ7"/>
+                        <outlet property="contextMenuBottom" destination="CLg-ob-IO7" id="5Ky-Yx-SQ7"/>
+                        <outlet property="contextMenuHeight" destination="4Gc-XG-g5m" id="LQA-EJ-OdB"/>
                         <outlet property="contextMenuView" destination="5Y6-AB-lX7" id="1RK-Ou-OsC"/>
+                        <outlet property="topHeight" destination="FuV-sd-P4Q" id="hx3-Ci-Ovx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
