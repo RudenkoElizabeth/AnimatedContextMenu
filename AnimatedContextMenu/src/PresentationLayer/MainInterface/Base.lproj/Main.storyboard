@@ -73,6 +73,9 @@
                             <constraint firstAttribute="trailing" secondItem="Cm3-Ui-qwl" secondAttribute="trailing" id="wn7-dX-IkR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contextMenuView" destination="Cm3-Ui-qwl" id="qqi-ej-aQ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
