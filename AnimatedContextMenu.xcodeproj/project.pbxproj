@@ -14,6 +14,7 @@
 		2107D70326B1896600B1312C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2107D70226B1896600B1312C /* Assets.xcassets */; };
 		2107D70626B1896600B1312C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2107D70426B1896600B1312C /* LaunchScreen.storyboard */; };
 		2143D89D27A2D16C00C0208D /* UIViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2143D89C27A2D16C00C0208D /* UIViewControllerHelper.swift */; };
+		2143D89F27A3AFCC00C0208D /* ContextMenuConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2143D89E27A3AFCC00C0208D /* ContextMenuConstants.swift */; };
 		21B5CD2B27A2C59C0059F767 /* ContextMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2027A2C59B0059F767 /* ContextMenuPresenter.swift */; };
 		21B5CD2C27A2C59C0059F767 /* ContextMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2227A2C59B0059F767 /* ContextMenuViewController.swift */; };
 		21B5CD2D27A2C59C0059F767 /* ContextMenuConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2427A2C59B0059F767 /* ContextMenuConfigurator.swift */; };
@@ -33,6 +34,7 @@
 		2107D70526B1896600B1312C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2107D70726B1896600B1312C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2143D89C27A2D16C00C0208D /* UIViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerHelper.swift; sourceTree = "<group>"; };
+		2143D89E27A3AFCC00C0208D /* ContextMenuConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuConstants.swift; sourceTree = "<group>"; };
 		21B5CD2027A2C59B0059F767 /* ContextMenuPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuPresenter.swift; sourceTree = "<group>"; };
 		21B5CD2227A2C59B0059F767 /* ContextMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuViewController.swift; sourceTree = "<group>"; };
 		21B5CD2427A2C59B0059F767 /* ContextMenuConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuConfigurator.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				21B5CD2427A2C59B0059F767 /* ContextMenuConfigurator.swift */,
+				2143D89E27A3AFCC00C0208D /* ContextMenuConstants.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				21B5CD2C27A2C59C0059F767 /* ContextMenuViewController.swift in Sources */,
 				21B5CD2D27A2C59C0059F767 /* ContextMenuConfigurator.swift in Sources */,
+				2143D89F27A3AFCC00C0208D /* ContextMenuConstants.swift in Sources */,
 				2143D89D27A2D16C00C0208D /* UIViewControllerHelper.swift in Sources */,
 				2107D6FE26B1896300B1312C /* ViewController.swift in Sources */,
 				21B5CD2F27A2C59C0059F767 /* ContextMenuInteractor.swift in Sources */,

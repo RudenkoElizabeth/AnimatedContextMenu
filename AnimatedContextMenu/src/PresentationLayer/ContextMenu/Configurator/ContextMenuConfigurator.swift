@@ -8,14 +8,15 @@ import UIKit
 
 class ContextMenuModuleConfigurator {
 
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
+    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) -> ContextMenuModuleInput? {
 
         if let viewController = viewInput as? ContextMenuViewController {
-            configure(viewController: viewController)
+            return configure(viewController: viewController)
         }
+        return nil
     }
 
-    private func configure(viewController: ContextMenuViewController) {
+    private func configure(viewController: ContextMenuViewController) -> ContextMenuModuleInput {
 
         let router = ContextMenuRouter()
 
@@ -28,6 +29,8 @@ class ContextMenuModuleConfigurator {
 
         presenter.interactor = interactor
         viewController.output = presenter
+        
+        return presenter
     }
 
 }

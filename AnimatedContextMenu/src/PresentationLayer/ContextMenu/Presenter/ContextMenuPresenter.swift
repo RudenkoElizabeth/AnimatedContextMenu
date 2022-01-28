@@ -11,6 +11,10 @@ class ContextMenuPresenter: ContextMenuModuleInput, ContextMenuViewOutput, Conte
     var router: ContextMenuRouterInput!
 
     func viewIsReady() {
-
+        view.setupInitialState()
+    }
+    
+    func showContextMenu() {
+        view.showContextMenu()
     }
 }

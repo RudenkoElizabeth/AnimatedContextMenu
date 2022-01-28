@@ -6,6 +6,7 @@
 
 protocol ContextMenuViewInput: AnyObject {
     func setupInitialState()
+    func showContextMenu()
 }
 
 protocol ContextMenuViewOutput {
@@ -13,7 +14,7 @@ protocol ContextMenuViewOutput {
 }
 
 protocol ContextMenuModuleInput: AnyObject {
-
+    func showContextMenu()
 }
 
 protocol ContextMenuInteractorInput {
