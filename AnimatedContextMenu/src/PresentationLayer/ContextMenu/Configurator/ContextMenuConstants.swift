@@ -19,4 +19,6 @@ class ContextMenuConstants {
             }
         }
     }
+    static let cell = "ContextMenuCell"
+    static let titles = [ "menu 1", "menu 2", "menu3" ]
 }

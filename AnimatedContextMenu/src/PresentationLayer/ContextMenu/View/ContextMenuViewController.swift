@@ -8,6 +8,7 @@ import UIKit
 
 class ContextMenuViewController: UIViewController, ContextMenuViewInput {
     
+    @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var contextMenuView: UIView!
     @IBOutlet private weak var topHeight: NSLayoutConstraint!
     @IBOutlet private weak var contextMenuHeight: NSLayoutConstraint!
@@ -23,11 +24,6 @@ class ContextMenuViewController: UIViewController, ContextMenuViewInput {
         recognizer.addTarget(self, action: #selector(popupViewPanned(recognizer:)))
         return recognizer
     }()
-    private lazy var tapRecognizer: UITapGestureRecognizer = {
-        let recognizer = UITapGestureRecognizer()
-        recognizer.addTarget(self, action: #selector(tabBackgroundAction))
-        return recognizer
-    }()
     
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
@@ -36,9 +32,11 @@ class ContextMenuViewController: UIViewController, ContextMenuViewInput {
     }
     
     func setupInitialState() {
-        conttextMenuOffset = contextMenuHeight.constant - topHeight.constant
+        let menuHeight = tableView.rowHeight * CGFloat(ContextMenuConstants.titles.count)
+        contextMenuHeight.constant = menuHeight + topHeight.constant
+        contextMenuBottom.constant = menuHeight
+        conttextMenuOffset = menuHeight
         contextMenuView.addGestureRecognizer(panRecognizer)
-        view.addGestureRecognizer(tapRecognizer)
     }
     
     func showContextMenu() {

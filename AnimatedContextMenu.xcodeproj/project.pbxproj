@@ -22,6 +22,8 @@
 		21B5CD2F27A2C59C0059F767 /* ContextMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2827A2C59B0059F767 /* ContextMenuInteractor.swift */; };
 		21B5CD3027A2C59C0059F767 /* ContextMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2A27A2C59B0059F767 /* ContextMenuRouter.swift */; };
 		21B5CD3227A2C5DC0059F767 /* ContextMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B5CD3127A2C5DC0059F767 /* ContextMenu.storyboard */; };
+		21F6E26427A7EEED00C97963 /* ContextMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6E26327A7EEED00C97963 /* ContextMenuCell.swift */; };
+		21F6E26627A7EFB000C97963 /* ContextMenuViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6E26527A7EFB000C97963 /* ContextMenuViewController+UITableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		21B5CD2827A2C59B0059F767 /* ContextMenuInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuInteractor.swift; sourceTree = "<group>"; };
 		21B5CD2A27A2C59B0059F767 /* ContextMenuRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuRouter.swift; sourceTree = "<group>"; };
 		21B5CD3127A2C5DC0059F767 /* ContextMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContextMenu.storyboard; sourceTree = "<group>"; };
+		21F6E26327A7EEED00C97963 /* ContextMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuCell.swift; sourceTree = "<group>"; };
+		21F6E26527A7EFB000C97963 /* ContextMenuViewController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContextMenuViewController+UITableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +135,9 @@
 		21B5CD2127A2C59B0059F767 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				21F6E26327A7EEED00C97963 /* ContextMenuCell.swift */,
 				21B5CD2227A2C59B0059F767 /* ContextMenuViewController.swift */,
+				21F6E26527A7EFB000C97963 /* ContextMenuViewController+UITableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -266,7 +272,9 @@
 				2143D89F27A3AFCC00C0208D /* ContextMenuConstants.swift in Sources */,
 				2143D89D27A2D16C00C0208D /* UIViewControllerHelper.swift in Sources */,
 				2107D6FE26B1896300B1312C /* ViewController.swift in Sources */,
+				21F6E26627A7EFB000C97963 /* ContextMenuViewController+UITableView.swift in Sources */,
 				21B5CD2F27A2C59C0059F767 /* ContextMenuInteractor.swift in Sources */,
+				21F6E26427A7EEED00C97963 /* ContextMenuCell.swift in Sources */,
 				2107D6FA26B1896300B1312C /* AppDelegate.swift in Sources */,
 				2107D6FC26B1896300B1312C /* SceneDelegate.swift in Sources */,
 				21B5CD2B27A2C59C0059F767 /* ContextMenuPresenter.swift in Sources */,
