@@ -32,7 +32,7 @@ class ContextMenuViewController: UIViewController, ContextMenuViewInput {
     }
     
     func setupInitialState() {
-        let menuHeight = tableView.rowHeight * CGFloat(ContextMenuConstants.titles.count)
+        let menuHeight = tableView.rowHeight * CGFloat(ContextMenuConstants.menuItems.count)
         contextMenuHeight.constant = menuHeight + topHeight.constant
         contextMenuBottom.constant = menuHeight
         conttextMenuOffset = menuHeight

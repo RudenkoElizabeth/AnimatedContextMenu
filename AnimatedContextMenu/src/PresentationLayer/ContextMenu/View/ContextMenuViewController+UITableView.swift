@@ -9,13 +9,15 @@ import UIKit
 
 extension ContextMenuViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ContextMenuConstants.titles.count
+        ContextMenuConstants.menuItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = ContextMenuConstants.cell
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! ContextMenuCell
-        cell.set(title: ContextMenuConstants.titles[indexPath.row])
+        let item = ContextMenuConstants.menuItems[indexPath.row]
+        cell.set(title: item.title)
+        cell.setIcon(name: item.icon)
         return cell
     }
 }
