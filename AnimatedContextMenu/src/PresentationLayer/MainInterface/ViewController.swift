@@ -13,13 +13,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let swipeGestureRecognizerDown = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
-        swipeGestureRecognizerDown.direction = .up
-        contextMenuView.addGestureRecognizer(swipeGestureRecognizerDown)
-    }
-
-    @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
-        showContextMenuAction()
     }
 }
 

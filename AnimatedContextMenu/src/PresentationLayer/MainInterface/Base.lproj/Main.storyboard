@@ -18,40 +18,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="zfA-xg-Gm7">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="856"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="822"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cm3-Ui-qwl" userLabel="Conext Menu View">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsU-Lq-eQb">
                                 <rect key="frame" x="0.0" y="822" width="414" height="40"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EsA-Ej-m64">
-                                        <rect key="frame" x="107" y="19" width="200" height="2"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="NLy-g2-8vb"/>
-                                            <constraint firstAttribute="width" constant="200" id="yYy-Qt-9RZ"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsU-Lq-eQb">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="showContextMenuAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="LIg-vG-dAq"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <constraints>
-                                    <constraint firstItem="xsU-Lq-eQb" firstAttribute="top" secondItem="Cm3-Ui-qwl" secondAttribute="top" id="5vu-Le-rwv"/>
-                                    <constraint firstItem="xsU-Lq-eQb" firstAttribute="leading" secondItem="Cm3-Ui-qwl" secondAttribute="leading" id="Ema-8R-TT3"/>
-                                    <constraint firstAttribute="height" constant="40" id="Oi3-n6-jYW"/>
-                                    <constraint firstItem="EsA-Ej-m64" firstAttribute="centerX" secondItem="Cm3-Ui-qwl" secondAttribute="centerX" id="UhO-X0-2LZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="xsU-Lq-eQb" secondAttribute="bottom" id="aMT-lY-vRh"/>
-                                    <constraint firstAttribute="trailing" secondItem="xsU-Lq-eQb" secondAttribute="trailing" id="fuO-ht-rMn"/>
-                                    <constraint firstItem="EsA-Ej-m64" firstAttribute="centerY" secondItem="Cm3-Ui-qwl" secondAttribute="centerY" id="l8v-ty-Wkb"/>
+                                    <constraint firstAttribute="height" constant="40" id="jSM-xL-5Vb"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Show Context Menu">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="showContextMenuAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="LIg-vG-dAq"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7O-5a-d2l" userLabel="Bottom View">
                                 <rect key="frame" x="0.0" y="862" width="414" height="34"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
@@ -60,22 +44,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cm3-Ui-qwl" secondAttribute="bottom" id="D5x-Dv-QHR"/>
-                            <constraint firstItem="Cm3-Ui-qwl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Erl-Ml-dCl"/>
+                            <constraint firstItem="m7O-5a-d2l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="1U1-Qc-ulg"/>
+                            <constraint firstItem="xsU-Lq-eQb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7KE-VD-5w8"/>
                             <constraint firstItem="m7O-5a-d2l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G0a-pS-FYi"/>
-                            <constraint firstItem="m7O-5a-d2l" firstAttribute="top" secondItem="Cm3-Ui-qwl" secondAttribute="bottom" id="LxH-ru-64E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m7O-5a-d2l" secondAttribute="trailing" id="SMN-dB-sz1"/>
-                            <constraint firstItem="Cm3-Ui-qwl" firstAttribute="top" secondItem="zfA-xg-Gm7" secondAttribute="bottom" constant="-34" id="UGD-VL-dPI"/>
+                            <constraint firstItem="m7O-5a-d2l" firstAttribute="top" secondItem="xsU-Lq-eQb" secondAttribute="bottom" id="X9p-oV-ifZ"/>
                             <constraint firstAttribute="bottom" secondItem="m7O-5a-d2l" secondAttribute="bottom" id="g2B-gG-KeE"/>
                             <constraint firstAttribute="trailing" secondItem="zfA-xg-Gm7" secondAttribute="trailing" id="iLM-rG-m8s"/>
                             <constraint firstItem="zfA-xg-Gm7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mm1-Ny-8na"/>
+                            <constraint firstItem="xsU-Lq-eQb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="o8j-9p-fqi"/>
+                            <constraint firstItem="xsU-Lq-eQb" firstAttribute="top" secondItem="zfA-xg-Gm7" secondAttribute="bottom" id="uMg-fc-fwg"/>
                             <constraint firstItem="zfA-xg-Gm7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="w4N-ja-mhT"/>
-                            <constraint firstAttribute="trailing" secondItem="Cm3-Ui-qwl" secondAttribute="trailing" id="wn7-dX-IkR"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="contextMenuView" destination="Cm3-Ui-qwl" id="qqi-ej-aQ1"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
