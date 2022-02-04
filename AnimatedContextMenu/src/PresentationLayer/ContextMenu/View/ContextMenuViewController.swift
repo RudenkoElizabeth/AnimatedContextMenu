@@ -42,19 +42,43 @@ class ContextMenuViewController: UIViewController, ContextMenuViewInput {
     func showContextMenu() {
         animateTransitionIfNeeded(to: .open)
     }
-    
-    @objc private func tabBackgroundAction() {
+}
+
+private extension ContextMenuViewController {
+    @IBAction func dismissAction() {
         animateTransitionIfNeeded(to: .closed)
     }
     
-    // Animates the transition, if the animation is not already running.
-    private func animateTransitionIfNeeded(to state: ContextMenuConstants.State) {
+    @objc func popupViewPanned(recognizer: UIPanGestureRecognizer) {
+        switch recognizer.state {
+        case .began:
+            animationBegan(recognizer)
+        case .changed:
+            animationChanged(recognizer)
+        case .ended:
+            animationEnded(recognizer)
+        default:
+            return
+        }
+    }
+}
+
+// Animates the transition, if the animation is not already running
+private extension ContextMenuViewController {
+    func animateTransitionIfNeeded(to state: ContextMenuConstants.State) {
         guard runningAnimator == nil else { return }
-        let transitionAnimator = UIViewPropertyAnimator(duration: 1, dampingRatio: 1, animations: {
+        runningAnimator = getAnimatorFor(state: state)
+        setupCompletionFor(state: state)
+        runningAnimator?.startAnimation()
+    }
+    
+    func getAnimatorFor(state: ContextMenuConstants.State) -> UIViewPropertyAnimator {
+        UIViewPropertyAnimator(duration: 1, dampingRatio: 1, animations: {
             switch state {
             case .open:
                 self.contextMenuBottom.constant = 0
                 self.contextMenuView.layer.cornerRadius = 20
+                self.contextMenuView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
                 self.view.backgroundColor = .black.withAlphaComponent(0.5)
             case .closed:
                 self.contextMenuBottom.constant = self.conttextMenuOffset
@@ -63,7 +87,10 @@ class ContextMenuViewController: UIViewController, ContextMenuViewInput {
             }
             self.view.layoutIfNeeded()
         })
-        transitionAnimator.addCompletion { [self] position in
+    }
+    
+    func setupCompletionFor(state: ContextMenuConstants.State) {
+        runningAnimator?.addCompletion { [self] position in
             runningAnimator = nil
             switch position {
             case .start:
@@ -81,42 +108,39 @@ class ContextMenuViewController: UIViewController, ContextMenuViewInput {
                 self.dismiss(animated: false)
             }
         }
-        transitionAnimator.startAnimation()
-        runningAnimator = transitionAnimator
     }
     
-    @objc private func popupViewPanned(recognizer: UIPanGestureRecognizer) {
-        switch recognizer.state {
-        case .began:
-            animateTransitionIfNeeded(to: currentState.opposite)
-            runningAnimator?.pauseAnimation()
-            animationProgress = runningAnimator?.fractionComplete ?? 0
-        case .changed:
-            let translation = recognizer.translation(in: contextMenuView)
-            var fraction = -translation.y / conttextMenuOffset
-            let isAdjustFraction = currentState == .open || runningAnimator?.isReversed == true
-            if isAdjustFraction { fraction *= -1 }
-            runningAnimator?.fractionComplete = fraction + animationProgress
-        case .ended:
-            let yVelocity = recognizer.velocity(in: contextMenuView).y
-            guard yVelocity != 0 else {
-                runningAnimator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-                return
-            }
-            let shouldClose = yVelocity > 0
-            if let isReversed = runningAnimator?.isReversed {
-                switch currentState {
-                case .open:
-                    if !shouldClose && !isReversed { runningAnimator?.isReversed.toggle() }
-                    if shouldClose && isReversed { runningAnimator?.isReversed.toggle() }
-                case .closed:
-                    if shouldClose && !isReversed { runningAnimator?.isReversed.toggle() }
-                    if !shouldClose && isReversed { runningAnimator?.isReversed.toggle() }
-                }
-            }
+    func animationBegan(_ recognizer: UIPanGestureRecognizer) {
+        animateTransitionIfNeeded(to: currentState.opposite)
+        runningAnimator?.pauseAnimation()
+        animationProgress = runningAnimator?.fractionComplete ?? 0
+    }
+    
+    func animationChanged(_ recognizer: UIPanGestureRecognizer) {
+        let translation = recognizer.translation(in: contextMenuView)
+        var fraction = -translation.y / conttextMenuOffset
+        let isAdjustFraction = currentState == .open || runningAnimator?.isReversed == true
+        if isAdjustFraction { fraction *= -1 }
+        runningAnimator?.fractionComplete = fraction + animationProgress
+    }
+    
+    func animationEnded(_ recognizer: UIPanGestureRecognizer) {
+        let yVelocity = recognizer.velocity(in: contextMenuView).y
+        guard yVelocity != 0 else {
             runningAnimator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-        default:
             return
         }
+        let shouldClose = yVelocity > 0
+        if let isReversed = runningAnimator?.isReversed {
+            switch currentState {
+            case .open:
+                if !shouldClose && !isReversed { runningAnimator?.isReversed.toggle() }
+                if shouldClose && isReversed { runningAnimator?.isReversed.toggle() }
+            case .closed:
+                if shouldClose && !isReversed { runningAnimator?.isReversed.toggle() }
+                if !shouldClose && isReversed { runningAnimator?.isReversed.toggle() }
+            }
+        }
+        runningAnimator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
     }
 }

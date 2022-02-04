@@ -23,7 +23,7 @@ class ContextMenuConstants {
     static let menuItems: [MenuItem] = [
         MenuItem(title: "Lorem ipsum dolor sit amet", icon: "gamecontroller"),
         MenuItem(title: "Integer varius lorem", icon: "network"),
-        MenuItem(title: "Aliquam semper ipsum", icon: "network"),
+        MenuItem(title: "Aliquam semper ipsum", icon: "heart.text.square"),
         MenuItem(title: "Etiam egestas libero", icon: "person.circle"),
         MenuItem(title: "Cras facilisis ipsum", icon: "globe.americas")
     ]
