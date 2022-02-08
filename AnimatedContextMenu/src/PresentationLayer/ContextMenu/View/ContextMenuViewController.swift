@@ -117,30 +117,28 @@ private extension ContextMenuViewController {
     }
     
     func animationChanged(_ recognizer: UIPanGestureRecognizer) {
+        guard let runningAnimator = self.runningAnimator else { return }
         let translation = recognizer.translation(in: contextMenuView)
         var fraction = -translation.y / conttextMenuOffset
-        let isAdjustFraction = currentState == .open || runningAnimator?.isReversed == true
+        let isAdjustFraction = currentState == .open || runningAnimator.isReversed
         if isAdjustFraction { fraction *= -1 }
-        runningAnimator?.fractionComplete = fraction + animationProgress
+        runningAnimator.fractionComplete = fraction + animationProgress
     }
     
     func animationEnded(_ recognizer: UIPanGestureRecognizer) {
+        guard let runningAnimator = self.runningAnimator else { return }
         let yVelocity = recognizer.velocity(in: contextMenuView).y
-        guard yVelocity != 0 else {
-            runningAnimator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-            return
+        if yVelocity != 0 {
+            let isReversed = runningAnimator.isReversed
+            let shouldClose = yVelocity > 0
+            let needToggle: Bool = {
+                switch currentState {
+                case .open: return shouldClose == isReversed
+                case .closed: return shouldClose != isReversed
+                }
+            }()
+            if needToggle { runningAnimator.isReversed.toggle() }
         }
-        let shouldClose = yVelocity > 0
-        if let isReversed = runningAnimator?.isReversed {
-            switch currentState {
-            case .open:
-                if !shouldClose && !isReversed { runningAnimator?.isReversed.toggle() }
-                if shouldClose && isReversed { runningAnimator?.isReversed.toggle() }
-            case .closed:
-                if shouldClose && !isReversed { runningAnimator?.isReversed.toggle() }
-                if !shouldClose && isReversed { runningAnimator?.isReversed.toggle() }
-            }
-        }
-        runningAnimator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+        runningAnimator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
     }
 }
