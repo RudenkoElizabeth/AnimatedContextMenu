@@ -11,6 +11,9 @@ protocol ContextMenuViewInput: AnyObject {
 
 protocol ContextMenuViewOutput {
     func viewIsReady()
+    func getTitleFor(row: Int) -> String
+    func getIconFor(row: Int) -> String
+    func actionFor(row: Int)
 }
 
 protocol ContextMenuModuleInput: AnyObject {

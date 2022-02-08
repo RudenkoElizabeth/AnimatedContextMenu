@@ -9,6 +9,7 @@ class ContextMenuPresenter: ContextMenuModuleInput, ContextMenuViewOutput, Conte
     weak var view: ContextMenuViewInput!
     var interactor: ContextMenuInteractorInput!
     var router: ContextMenuRouterInput!
+    private let menuItems = ContextMenuConstants.menuItems
 
     func viewIsReady() {
         view.setupInitialState()
@@ -16,5 +17,17 @@ class ContextMenuPresenter: ContextMenuModuleInput, ContextMenuViewOutput, Conte
     
     func showContextMenu() {
         view.showContextMenu()
+    }
+    
+    func getTitleFor(row: Int) -> String {
+        menuItems[row].title
+    }
+    
+    func getIconFor(row: Int) -> String {
+        menuItems[row].title
+    }
+    
+    func actionFor(row: Int) {
+        print("didSelectRowAt \(row)")
     }
 }

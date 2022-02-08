@@ -15,15 +15,16 @@ extension ContextMenuViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = ContextMenuConstants.cell
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! ContextMenuCell
-        let item = ContextMenuConstants.menuItems[indexPath.row]
-        cell.set(title: item.title)
-        cell.setIcon(name: item.icon)
+        let row = indexPath.row
+        cell.set(title: output.getTitleFor(row: row))
+        cell.setIcon(name: output.getIconFor(row: row))
         return cell
     }
 }
 
 extension ContextMenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("didSelectRowAt \(indexPath.row)")
+        output.actionFor(row: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
