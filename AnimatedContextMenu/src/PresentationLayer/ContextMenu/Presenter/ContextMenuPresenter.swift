@@ -4,13 +4,12 @@
 //  Created by Rudenko Elizabeth on 27/01/2022.
 //
 
-class ContextMenuPresenter: ContextMenuModuleInput, ContextMenuViewOutput, ContextMenuInteractorOutput{
-
+class ContextMenuPresenter: ContextMenuModuleInput, ContextMenuViewOutput {
+    
     weak var view: ContextMenuViewInput!
-    var interactor: ContextMenuInteractorInput!
-    var router: ContextMenuRouterInput!
+    weak var moduleOutput: ContextMenuModuleOutput!
     private let menuItems = ContextMenuConstants.menuItems
-
+    
     func viewIsReady() {
         view.setupInitialState()
     }
@@ -28,6 +27,8 @@ class ContextMenuPresenter: ContextMenuModuleInput, ContextMenuViewOutput, Conte
     }
     
     func actionFor(row: Int) {
-        print("didSelectRowAt \(row)")
+        let item = menuItems[row]
+        moduleOutput.actionFor(item: item)
+        view.hideContextMenu()
     }
 }

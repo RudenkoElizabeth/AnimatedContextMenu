@@ -7,6 +7,7 @@
 protocol ContextMenuViewInput: AnyObject {
     func setupInitialState()
     func showContextMenu()
+    func hideContextMenu()
 }
 
 protocol ContextMenuViewOutput {
@@ -20,14 +21,6 @@ protocol ContextMenuModuleInput: AnyObject {
     func showContextMenu()
 }
 
-protocol ContextMenuInteractorInput {
-
-}
-
-protocol ContextMenuInteractorOutput: AnyObject {
-
-}
-
-protocol ContextMenuRouterInput {
-
+protocol ContextMenuModuleOutput: AnyObject {
+    func actionFor(item: MenuItem)
 }

@@ -7,30 +7,23 @@
 import UIKit
 
 class ContextMenuModuleConfigurator {
-
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) -> ContextMenuModuleInput? {
-
+    
+    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController, moduleOutput: ContextMenuModuleOutput) -> ContextMenuModuleInput? {
         if let viewController = viewInput as? ContextMenuViewController {
-            return configure(viewController: viewController)
+            return configure(viewController: viewController, moduleOutput: moduleOutput)
         }
         return nil
     }
-
-    private func configure(viewController: ContextMenuViewController) -> ContextMenuModuleInput {
-
-        let router = ContextMenuRouter()
-
+    
+    private func configure(viewController: ContextMenuViewController, moduleOutput: ContextMenuModuleOutput) -> ContextMenuModuleInput {
+        
         let presenter = ContextMenuPresenter()
         presenter.view = viewController
-        presenter.router = router
-
-        let interactor = ContextMenuInteractor()
-        interactor.output = presenter
-
-        presenter.interactor = interactor
+        presenter.moduleOutput = moduleOutput
+        
         viewController.output = presenter
         
         return presenter
     }
-
+    
 }

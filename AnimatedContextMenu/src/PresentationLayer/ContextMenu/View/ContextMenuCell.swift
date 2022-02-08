@@ -8,7 +8,7 @@
 import UIKit
 
 class ContextMenuCell: UITableViewCell {
-     
+    
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var icon: UIImageView!
     
@@ -17,14 +17,14 @@ class ContextMenuCell: UITableViewCell {
         icon.image = nil
         titleLabel.text = nil
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         let color: UIColor = isSelected ? .label : .systemBackground
         titleLabel.textColor = color
         icon.tintColor = color
     }
-
+    
     func set(title: String?) {
         titleLabel.text = title
     }

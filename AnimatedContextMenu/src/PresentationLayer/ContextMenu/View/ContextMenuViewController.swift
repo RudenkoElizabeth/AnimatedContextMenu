@@ -44,12 +44,16 @@ class ContextMenuViewController: UIViewController, ContextMenuViewInput {
     func showContextMenu() {
         animateTransitionIfNeeded(to: .open)
     }
+    
+    func hideContextMenu() {
+        animateTransitionIfNeeded(to: .closed)
+    }
 }
 
 // Actions
 private extension ContextMenuViewController {
     @IBAction func dismissAction() {
-        animateTransitionIfNeeded(to: .closed)
+        hideContextMenu()
     }
     
     @objc func popupViewPanned(recognizer: UIPanGestureRecognizer) {
