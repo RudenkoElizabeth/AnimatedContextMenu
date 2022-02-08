@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Y6-AB-lX7" userLabel="Conext Menu View">
-                                <rect key="frame" x="0.0" y="822" width="414" height="500"/>
+                                <rect key="frame" x="0.0" y="926" width="414" height="500"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N5D-Uk-IXB" userLabel="Close View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
@@ -101,20 +101,23 @@
                                     <constraint firstAttribute="trailing" secondItem="3fI-1J-g6i" secondAttribute="trailing" id="uZK-hs-XQ3"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nfy-Qz-Yej" userLabel="Bottom View">
-                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
-                                <color key="backgroundColor" systemColor="labelColor"/>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqX-Jr-5sB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="926"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="dismissAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aHQ-DH-O52"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5Y6-AB-lX7" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="460" id="CLg-ob-IO7"/>
-                            <constraint firstAttribute="trailing" secondItem="Nfy-Qz-Yej" secondAttribute="trailing" id="Ffd-7j-1Se"/>
+                            <constraint firstItem="5Y6-AB-lX7" firstAttribute="top" secondItem="RqX-Jr-5sB" secondAttribute="bottom" id="2gx-Fa-zLV"/>
+                            <constraint firstAttribute="trailing" secondItem="RqX-Jr-5sB" secondAttribute="trailing" id="6FW-gZ-J3a"/>
+                            <constraint firstItem="5Y6-AB-lX7" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" constant="530" id="CLg-ob-IO7"/>
                             <constraint firstAttribute="trailing" secondItem="5Y6-AB-lX7" secondAttribute="trailing" id="Ire-Oc-gJi"/>
-                            <constraint firstAttribute="bottom" secondItem="Nfy-Qz-Yej" secondAttribute="bottom" id="SWI-re-ydt"/>
-                            <constraint firstItem="Nfy-Qz-Yej" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="gUB-Sq-4xq"/>
-                            <constraint firstItem="Nfy-Qz-Yej" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ltX-kF-5Bu"/>
+                            <constraint firstItem="RqX-Jr-5sB" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="lrw-bI-vL4"/>
+                            <constraint firstItem="RqX-Jr-5sB" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="pmc-Ej-5JN"/>
                             <constraint firstItem="5Y6-AB-lX7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vzH-DY-2Xd"/>
                         </constraints>
                     </view>

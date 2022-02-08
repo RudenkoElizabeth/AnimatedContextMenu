@@ -15,10 +15,11 @@ class ContextMenuViewController: UIViewController, ContextMenuViewInput {
     @IBOutlet private weak var contextMenuBottom: NSLayoutConstraint!
     
     var output: ContextMenuViewOutput!
+    // For animation
     private var conttextMenuOffset: CGFloat = 0
+    private var animationProgress: CGFloat = 0
     private var currentState: ContextMenuConstants.State = .closed
     private var runningAnimator: UIViewPropertyAnimator?
-    private var animationProgress: CGFloat = 0
     private lazy var panRecognizer: UIPanGestureRecognizer = {
         let recognizer = UIPanGestureRecognizer()
         recognizer.addTarget(self, action: #selector(popupViewPanned(recognizer:)))
@@ -32,10 +33,11 @@ class ContextMenuViewController: UIViewController, ContextMenuViewInput {
     }
     
     func setupInitialState() {
-        let menuHeight = tableView.rowHeight * CGFloat(ContextMenuConstants.menuItems.count)
-        contextMenuHeight.constant = menuHeight + topHeight.constant
-        contextMenuBottom.constant = menuHeight
-        conttextMenuOffset = menuHeight
+        let safeAreaBottom = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
+        let tableViewHegight = tableView.rowHeight * CGFloat(ContextMenuConstants.menuItems.count)
+        conttextMenuOffset = tableViewHegight + topHeight.constant + safeAreaBottom
+        contextMenuHeight.constant = conttextMenuOffset
+        contextMenuBottom.constant = conttextMenuOffset
         contextMenuView.addGestureRecognizer(panRecognizer)
     }
     
@@ -44,6 +46,7 @@ class ContextMenuViewController: UIViewController, ContextMenuViewInput {
     }
 }
 
+// Actions
 private extension ContextMenuViewController {
     @IBAction func dismissAction() {
         animateTransitionIfNeeded(to: .closed)
@@ -112,8 +115,9 @@ private extension ContextMenuViewController {
     
     func animationBegan(_ recognizer: UIPanGestureRecognizer) {
         animateTransitionIfNeeded(to: currentState.opposite)
-        runningAnimator?.pauseAnimation()
-        animationProgress = runningAnimator?.fractionComplete ?? 0
+        guard let runningAnimator = self.runningAnimator else { return }
+        runningAnimator.pauseAnimation()
+        animationProgress = runningAnimator.fractionComplete
     }
     
     func animationChanged(_ recognizer: UIPanGestureRecognizer) {
