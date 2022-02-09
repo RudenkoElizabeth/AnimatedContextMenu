@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainInterfaceViewController.swift
 //  AnimatedContextMenu
 //
 //  Created by Elizaveta Rudenko on 27.01.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainInterfaceViewController: UIViewController {
     
     @IBOutlet private weak var contextMenuView: UIView!
     
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
 }
 
-private extension ViewController {
+private extension MainInterfaceViewController {
     @IBAction func showContextMenuAction() {
         let identifier = "ContextMenu"
         let viewController = UIViewController.instantiateFromStoryboard(identifier) as! ContextMenuViewController
@@ -27,7 +27,7 @@ private extension ViewController {
     }
 }
 
-extension ViewController: ContextMenuModuleOutput {
+extension MainInterfaceViewController: ContextMenuModuleOutput {
     func actionFor(item: MenuItem) {
         print("action for \(item.title)")
     }
