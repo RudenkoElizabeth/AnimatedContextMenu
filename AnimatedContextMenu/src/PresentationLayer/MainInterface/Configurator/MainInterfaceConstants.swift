@@ -9,4 +9,6 @@ import Foundation
 
 class MainInterfaceConstants {
     static let contextMenuIdentifier = "ContextMenu"
+    static let alertMessage = "Your action to do"
+    static let alertActionTitle = "Ok"
 }

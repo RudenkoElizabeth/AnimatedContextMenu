@@ -5,10 +5,10 @@
 //
 
 class MainInterfacePresenter: MainInterfaceModuleInput, MainInterfaceViewOutput {
-
+    
     weak var view: MainInterfaceViewInput!
     var router: MainInterfaceRouterInput!
-
+    
     func viewIsReady() {
         view.setupInitialState()
     }

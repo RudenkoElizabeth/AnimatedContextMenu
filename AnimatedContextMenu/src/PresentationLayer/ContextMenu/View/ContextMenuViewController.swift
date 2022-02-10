@@ -25,6 +25,7 @@ class ContextMenuViewController: UIViewController, ContextMenuViewInput {
         recognizer.addTarget(self, action: #selector(popupViewPanned(recognizer:)))
         return recognizer
     }()
+    private let animationDuration: TimeInterval = 0.5
     
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
@@ -42,11 +43,11 @@ class ContextMenuViewController: UIViewController, ContextMenuViewInput {
     }
     
     func showContextMenu() {
-        animateTransitionIfNeeded(to: .open)
+        animateTransitionIfNeeded(to: .open, duration: animationDuration)
     }
     
     func hideContextMenu() {
-        animateTransitionIfNeeded(to: .closed)
+        animateTransitionIfNeeded(to: .closed, duration: 0.2)
     }
 }
 
@@ -70,17 +71,18 @@ private extension ContextMenuViewController {
     }
 }
 
-// Animates the transition, if the animation is not already running
+// MARK: - Animation
 private extension ContextMenuViewController {
-    func animateTransitionIfNeeded(to state: ContextMenuConstants.State) {
+    // Animates the transition, if the animation is not already running
+    func animateTransitionIfNeeded(to state: ContextMenuConstants.State, duration: TimeInterval) {
         guard runningAnimator == nil else { return }
-        runningAnimator = getAnimatorFor(state: state)
+        runningAnimator = getAnimatorFor(state: state, duration: duration)
         setupCompletionFor(state: state)
         runningAnimator?.startAnimation()
     }
     
-    func getAnimatorFor(state: ContextMenuConstants.State) -> UIViewPropertyAnimator {
-        UIViewPropertyAnimator(duration: 1, dampingRatio: 1, animations: {
+    func getAnimatorFor(state: ContextMenuConstants.State, duration: TimeInterval) -> UIViewPropertyAnimator {
+        UIViewPropertyAnimator(duration: duration, dampingRatio: 1, animations: {
             switch state {
             case .open:
                 self.contextMenuBottom.constant = 0
@@ -118,7 +120,7 @@ private extension ContextMenuViewController {
     }
     
     func animationBegan(_ recognizer: UIPanGestureRecognizer) {
-        animateTransitionIfNeeded(to: currentState.opposite)
+        animateTransitionIfNeeded(to: currentState.opposite, duration: animationDuration)
         guard let runningAnimator = self.runningAnimator else { return }
         runningAnimator.pauseAnimation()
         animationProgress = runningAnimator.fractionComplete

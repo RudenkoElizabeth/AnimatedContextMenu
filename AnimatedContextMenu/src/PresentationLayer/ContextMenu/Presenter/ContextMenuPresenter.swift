@@ -9,6 +9,13 @@ class ContextMenuPresenter: ContextMenuModuleInput, ContextMenuViewOutput {
     weak var view: ContextMenuViewInput!
     weak var moduleOutput: ContextMenuModuleOutput!
     private let menuItems = ContextMenuConstants.menuItems
+    private var selectedItem: MenuItem?
+    
+    deinit {
+        if let item = selectedItem {
+            moduleOutput.actionFor(item: item)
+        }
+    }
     
     func viewIsReady() {
         view.setupInitialState()
@@ -27,8 +34,7 @@ class ContextMenuPresenter: ContextMenuModuleInput, ContextMenuViewOutput {
     }
     
     func actionFor(row: Int) {
-        let item = menuItems[row]
-        moduleOutput.actionFor(item: item)
+        selectedItem = menuItems[row]
         view.hideContextMenu()
     }
 }

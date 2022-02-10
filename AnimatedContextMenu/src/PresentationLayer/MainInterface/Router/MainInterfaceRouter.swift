@@ -7,7 +7,7 @@
 import UIKit
 
 class MainInterfaceRouter: MainInterfaceRouterInput {
-
+    
     weak var view: MainInterfaceViewController!
     
     func showContextMenu() {
@@ -22,6 +22,12 @@ class MainInterfaceRouter: MainInterfaceRouterInput {
 
 extension MainInterfaceRouter: ContextMenuModuleOutput {
     func actionFor(item: MenuItem) {
-        print("action for \(item.title)")
+        let title = item.title
+        let message =  MainInterfaceConstants.alertMessage
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let actionTitle = MainInterfaceConstants.alertActionTitle
+        let alertAction = UIAlertAction(title: actionTitle, style: .default)
+        alert.addAction(alertAction)
+        view.present(alert, animated: true)
     }
 }
