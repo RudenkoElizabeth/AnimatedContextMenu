@@ -12,7 +12,7 @@
         <!--Main Interface View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainInterfaceViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainInterface" id="BYZ-38-t0r" customClass="MainInterfaceViewController" customModule="AnimatedContextMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,6 +32,9 @@
                                 <state key="normal" title="Show Context Menu">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="showContextMenuAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="OQA-wx-AqK"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7O-5a-d2l" userLabel="Bottom View">
                                 <rect key="frame" x="0.0" y="862" width="414" height="34"/>

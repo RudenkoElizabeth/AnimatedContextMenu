@@ -15,6 +15,10 @@
 		2107D70626B1896600B1312C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2107D70426B1896600B1312C /* LaunchScreen.storyboard */; };
 		2143D89D27A2D16C00C0208D /* UIViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2143D89C27A2D16C00C0208D /* UIViewControllerHelper.swift */; };
 		2143D89F27A3AFCC00C0208D /* ContextMenuConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2143D89E27A3AFCC00C0208D /* ContextMenuConstants.swift */; };
+		216DE49C27B4DD600047E620 /* MainInterfacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216DE49B27B4DD600047E620 /* MainInterfacePresenter.swift */; };
+		216DE49F27B4DD720047E620 /* MainInterfaceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216DE49E27B4DD720047E620 /* MainInterfaceRouter.swift */; };
+		216DE4A227B4DD7C0047E620 /* MainInterfaceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216DE4A127B4DD7C0047E620 /* MainInterfaceConfigurator.swift */; };
+		216DE4A527B4DD9E0047E620 /* MainInterfaceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216DE4A427B4DD9E0047E620 /* MainInterfaceProtocols.swift */; };
 		21B5CD2B27A2C59C0059F767 /* ContextMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2027A2C59B0059F767 /* ContextMenuPresenter.swift */; };
 		21B5CD2C27A2C59C0059F767 /* ContextMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2227A2C59B0059F767 /* ContextMenuViewController.swift */; };
 		21B5CD2D27A2C59C0059F767 /* ContextMenuConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2427A2C59B0059F767 /* ContextMenuConfigurator.swift */; };
@@ -36,6 +40,10 @@
 		2107D70726B1896600B1312C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2143D89C27A2D16C00C0208D /* UIViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerHelper.swift; sourceTree = "<group>"; };
 		2143D89E27A3AFCC00C0208D /* ContextMenuConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuConstants.swift; sourceTree = "<group>"; };
+		216DE49B27B4DD600047E620 /* MainInterfacePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfacePresenter.swift; sourceTree = "<group>"; };
+		216DE49E27B4DD720047E620 /* MainInterfaceRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceRouter.swift; sourceTree = "<group>"; };
+		216DE4A127B4DD7C0047E620 /* MainInterfaceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceConfigurator.swift; sourceTree = "<group>"; };
+		216DE4A427B4DD9E0047E620 /* MainInterfaceProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceProtocols.swift; sourceTree = "<group>"; };
 		21B5CD2027A2C59B0059F767 /* ContextMenuPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuPresenter.swift; sourceTree = "<group>"; };
 		21B5CD2227A2C59B0059F767 /* ContextMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuViewController.swift; sourceTree = "<group>"; };
 		21B5CD2427A2C59B0059F767 /* ContextMenuConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuConfigurator.swift; sourceTree = "<group>"; };
@@ -86,7 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				2107D6FF26B1896300B1312C /* MainInterface.storyboard */,
-				2107D6FD26B1896300B1312C /* MainInterfaceViewController.swift */,
+				216DE49927B4DD4D0047E620 /* View */,
+				216DE49A27B4DD600047E620 /* Presenter */,
+				216DE49D27B4DD720047E620 /* Router */,
+				216DE4A027B4DD7C0047E620 /* Configurator */,
+				216DE4A327B4DD9E0047E620 /* Protocols */,
 			);
 			path = MainInterface;
 			sourceTree = "<group>";
@@ -106,6 +118,46 @@
 				21B5CD1E27A2C59B0059F767 /* ContextMenu */,
 			);
 			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		216DE49927B4DD4D0047E620 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2107D6FD26B1896300B1312C /* MainInterfaceViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		216DE49A27B4DD600047E620 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				216DE49B27B4DD600047E620 /* MainInterfacePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		216DE49D27B4DD720047E620 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				216DE49E27B4DD720047E620 /* MainInterfaceRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		216DE4A027B4DD7C0047E620 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				216DE4A127B4DD7C0047E620 /* MainInterfaceConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		216DE4A327B4DD9E0047E620 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				216DE4A427B4DD9E0047E620 /* MainInterfaceProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		21B5CD1E27A2C59B0059F767 /* ContextMenu */ = {
@@ -258,16 +310,20 @@
 			files = (
 				21B5CD2C27A2C59C0059F767 /* ContextMenuViewController.swift in Sources */,
 				21B5CD2D27A2C59C0059F767 /* ContextMenuConfigurator.swift in Sources */,
+				216DE4A527B4DD9E0047E620 /* MainInterfaceProtocols.swift in Sources */,
 				2143D89F27A3AFCC00C0208D /* ContextMenuConstants.swift in Sources */,
 				2143D89D27A2D16C00C0208D /* UIViewControllerHelper.swift in Sources */,
 				2107D6FE26B1896300B1312C /* MainInterfaceViewController.swift in Sources */,
 				21F6E26627A7EFB000C97963 /* ContextMenuViewController+UITableView.swift in Sources */,
 				21CD995227AB1A1C0032764F /* MenuItem.swift in Sources */,
+				216DE49F27B4DD720047E620 /* MainInterfaceRouter.swift in Sources */,
 				21F6E26427A7EEED00C97963 /* ContextMenuCell.swift in Sources */,
 				2107D6FA26B1896300B1312C /* AppDelegate.swift in Sources */,
 				2107D6FC26B1896300B1312C /* SceneDelegate.swift in Sources */,
+				216DE4A227B4DD7C0047E620 /* MainInterfaceConfigurator.swift in Sources */,
 				21B5CD2B27A2C59C0059F767 /* ContextMenuPresenter.swift in Sources */,
 				21B5CD2E27A2C59C0059F767 /* ContextMenuProtocols.swift in Sources */,
+				216DE49C27B4DD600047E620 /* MainInterfacePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
