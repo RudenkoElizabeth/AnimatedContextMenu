@@ -19,6 +19,7 @@
 		216DE49F27B4DD720047E620 /* MainInterfaceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216DE49E27B4DD720047E620 /* MainInterfaceRouter.swift */; };
 		216DE4A227B4DD7C0047E620 /* MainInterfaceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216DE4A127B4DD7C0047E620 /* MainInterfaceConfigurator.swift */; };
 		216DE4A527B4DD9E0047E620 /* MainInterfaceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216DE4A427B4DD9E0047E620 /* MainInterfaceProtocols.swift */; };
+		216DE4A727B4DEC90047E620 /* MainInterfaceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216DE4A627B4DEC90047E620 /* MainInterfaceConstants.swift */; };
 		21B5CD2B27A2C59C0059F767 /* ContextMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2027A2C59B0059F767 /* ContextMenuPresenter.swift */; };
 		21B5CD2C27A2C59C0059F767 /* ContextMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2227A2C59B0059F767 /* ContextMenuViewController.swift */; };
 		21B5CD2D27A2C59C0059F767 /* ContextMenuConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5CD2427A2C59B0059F767 /* ContextMenuConfigurator.swift */; };
@@ -44,6 +45,7 @@
 		216DE49E27B4DD720047E620 /* MainInterfaceRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceRouter.swift; sourceTree = "<group>"; };
 		216DE4A127B4DD7C0047E620 /* MainInterfaceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceConfigurator.swift; sourceTree = "<group>"; };
 		216DE4A427B4DD9E0047E620 /* MainInterfaceProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceProtocols.swift; sourceTree = "<group>"; };
+		216DE4A627B4DEC90047E620 /* MainInterfaceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInterfaceConstants.swift; sourceTree = "<group>"; };
 		21B5CD2027A2C59B0059F767 /* ContextMenuPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuPresenter.swift; sourceTree = "<group>"; };
 		21B5CD2227A2C59B0059F767 /* ContextMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuViewController.swift; sourceTree = "<group>"; };
 		21B5CD2427A2C59B0059F767 /* ContextMenuConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextMenuConfigurator.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				216DE4A127B4DD7C0047E620 /* MainInterfaceConfigurator.swift */,
+				216DE4A627B4DEC90047E620 /* MainInterfaceConstants.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				216DE4A527B4DD9E0047E620 /* MainInterfaceProtocols.swift in Sources */,
 				2143D89F27A3AFCC00C0208D /* ContextMenuConstants.swift in Sources */,
 				2143D89D27A2D16C00C0208D /* UIViewControllerHelper.swift in Sources */,
+				216DE4A727B4DEC90047E620 /* MainInterfaceConstants.swift in Sources */,
 				2107D6FE26B1896300B1312C /* MainInterfaceViewController.swift in Sources */,
 				21F6E26627A7EFB000C97963 /* ContextMenuViewController+UITableView.swift in Sources */,
 				21CD995227AB1A1C0032764F /* MenuItem.swift in Sources */,

@@ -26,17 +26,6 @@ class MainInterfaceViewController: UIViewController, MainInterfaceViewInput {
 
 private extension MainInterfaceViewController {
     @IBAction func showContextMenuAction() {
-        let identifier = "ContextMenu"
-        let viewController = UIViewController.instantiateFromStoryboard(identifier) as! ContextMenuViewController
-        let presenter = ContextMenuModuleConfigurator().configureModuleForViewInput(viewInput: viewController, moduleOutput: self)
-        present(viewController, animated: false, completion: {
-            presenter?.showContextMenu()
-        })
-    }
-}
-
-extension MainInterfaceViewController: ContextMenuModuleOutput {
-    func actionFor(item: MenuItem) {
-        print("action for \(item.title)")
+        output.showContextMenu()
     }
 }

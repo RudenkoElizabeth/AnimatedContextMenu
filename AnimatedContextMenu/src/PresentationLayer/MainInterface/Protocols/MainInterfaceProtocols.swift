@@ -4,18 +4,19 @@
 //  Created by Rudenko Elizabeth on 10/02/2022.
 //
 
-protocol MainInterfaceViewInput: class {
+protocol MainInterfaceViewInput: AnyObject {
     func setupInitialState()
 }
 
 protocol MainInterfaceViewOutput {
     func viewIsReady()
+    func showContextMenu()
 }
 
-protocol MainInterfaceModuleInput: class {
-
+protocol MainInterfaceModuleInput: AnyObject {
+    
 }
 
 protocol MainInterfaceRouterInput {
-
+    func showContextMenu()
 }

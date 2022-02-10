@@ -17,6 +17,7 @@ class MainInterfaceModuleConfigurator {
     private func configure(viewController: MainInterfaceViewController) {
         
         let router = MainInterfaceRouter()
+        router.view = viewController
         
         let presenter = MainInterfacePresenter()
         presenter.view = viewController

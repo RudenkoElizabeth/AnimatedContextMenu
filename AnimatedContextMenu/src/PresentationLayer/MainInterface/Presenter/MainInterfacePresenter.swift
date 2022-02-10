@@ -12,4 +12,8 @@ class MainInterfacePresenter: MainInterfaceModuleInput, MainInterfaceViewOutput 
     func viewIsReady() {
         view.setupInitialState()
     }
+    
+    func showContextMenu() {
+        router.showContextMenu()
+    }
 }
